@@ -1,0 +1,53 @@
+
+.imag{
+    position: relative;
+    left: 300px;
+    font-size: 30px;
+    font-style: bold;
+    color: brown;
+}
+.step{
+    position: relative;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    background: rgb(183, 182, 186);
+    text-align: center;
+    font: 25px Arial, sans-serif;
+}
+.space{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    left: 400px;
+    top: 30px;
+}
+.p{
+    position: absolute;
+    left: -3px;
+}
+.space1{
+    position: absolute;
+    float: right;
+    height: 50px;
+    width: 50px;
+    left: 600px;
+    top: 230px;
+}
+.p1{
+    position: absolute;
+    left: -14px;
+}
+.space2{
+    position:absolute;
+    float: right;
+    height: 50px;
+    width: 50px;
+    left: 800px;
+    top: 230px;
+}
+.p2{
+    position: absolute;
+    left: -10px;
+}
