@@ -8,7 +8,7 @@ import { PreviewComponent } from './employee-onboarding/preview/preview.componen
 const routes: Routes = [
   {path: 'employee-onboarding', component : EmployeeOnboardingComponent ,
       children:[
-        {path:'' , redirectTo :'PersonalDetailsComponent',pathMatch: 'full'},
+        {path:'' , redirectTo :'personal-detail',pathMatch: 'full'},
         {path:'personal-detail',component:PersonalDetailsComponent},
         {path:'document-details', component: DocumentDetailsComponent},
         {path:'preview', component: PreviewComponent}
