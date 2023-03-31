@@ -1,21 +1,22 @@
-<div >
-   <h3 class="imag">Employee Onboarding</h3>
-   <div class="space">
-      <span class="step">
-       <a routerLink="/personal-detail">1</a>
-      </span>
-      <p class="p">Details</p>
+<form class="form">
+   <div class="sub-form">
+      <h3 class="title-color">Employee Onboarding</h3>
+      <div class="progressbar margin-for-steps">
+         <div class="progress-step progress-step-active" data-title="Details">
+         </div>
+         <div class="progress-step" data-title="Document">
+         </div>
+         <div class="progress-step" data-title="Preview">
+         </div>
+      </div>
+      <div class="form-step form-step-active">
+         <app-personal-details  ></app-personal-details>
+      </div>
+      <div class="form-step form-step-active">
+         <app-document-details class="form-step"></app-document-details>
+      </div>
+      <div class="form-step form-step-active">
+         <app-preview class="form-step"></app-preview>
+      </div>
    </div>
-   <div class="space1">
-      <span class="step">
-        <a routerLink="/document">2</a>
-      </span>
-      <p class="p1">Document</p>
-   </div>
-   <div class="space2">
-    <span class="step">
-    <a routerLink="/Preview">3</a>
-    </span>
-    <p class="p2">Preview</p>
- </div>
-</div>
+</form>

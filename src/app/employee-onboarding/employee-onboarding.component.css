@@ -1,53 +1,83 @@
-
-.imag{
+.progressbar {
     position: relative;
-    left: 300px;
-    font-size: 30px;
-    font-style: bold;
-    color: brown;
-}
-.step{
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+   .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+  }
+  
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-    background: rgb(183, 182, 186);
-    text-align: center;
-    font: 25px Arial, sans-serif;
-}
-.space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .progress-step-active {
+    background-color:  rgb(6, 6, 120);
+    color: #f3f3f3;
+  }
+  .title-color{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .margin-for-steps{
     position: relative;
-    height: 30px;
-    width: 30px;
-    left: 400px;
-    top: 30px;
-}
-.p{
-    position: absolute;
-    left: -3px;
-}
-.space1{
-    position: absolute;
-    float: right;
-    height: 50px;
-    width: 50px;
-    left: 600px;
-    top: 230px;
-}
-.p1{
-    position: absolute;
-    left: -14px;
-}
-.space2{
-    position:absolute;
-    float: right;
-    height: 50px;
-    width: 50px;
-    left: 800px;
-    top: 230px;
-}
-.p2{
-    position: absolute;
-    left: -10px;
-}
+    margin-left: 100px;
+  }
+  .form {
+    width: clamp(100%, 0%, 100%);
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+    padding: 1.5rem;
+    background-color: rgb(245, 242, 242);
+  }
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  .sub-form{
+    position: inherit;
+    width: 750px;
+    margin-left: 220px;
+  }

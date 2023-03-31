@@ -9,6 +9,8 @@ import { EmployeeOnboardingComponent } from './employee-onboarding/employee-onbo
 import { PersonalDetailsComponent } from './employee-onboarding/personal-details/personal-details.component';
 import { DocumentDetailsComponent } from './employee-onboarding/document-details/document-details.component';
 import { PreviewComponent } from './employee-onboarding/preview/preview.component';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PreviewComponent } from './employee-onboarding/preview/preview.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

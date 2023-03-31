@@ -1,1 +1,99 @@
-<p>personal-details works!</p>
+<form [formGroup]="personalDetails" class="form">
+   <div>
+    <div class="ttl" ><p style="color: black; font-weight: bold;  font-size: 20px;">Personal Details</p></div>
+   </div>
+   <br><br>
+   <div class="input-group">
+    <label style="font-size: 13px; font-weight: bold; color: grey;" >First Name</label><br>
+    <input id="firstName" type="text" class="input-style" formControlName="firstName" placeholder="First Name"/>
+    <small  *ngIf="(personalDetails.controls['firstName'].invalid && (personalDetails.controls['firstName'].touched ) && personalDetails.controls['firstName'].hasError('required') ) " class="text-danger">
+     <label>*First name required</label> 
+    </small>
+    <small *ngIf="(personalDetails.controls['firstName'].invalid && (personalDetails.controls['firstName'].touched) && personalDetails.controls['firstName'].hasError('maxlength'))"
+    class="text-danger">
+    First name must be less than 40 characters </small>
+  </div>
+  <br>
+  <div class="input-group">
+    <label style="font-size: 13px; font-weight: bold; color: grey;">Last Name</label><br>
+    <input id="lastName" type="text" class="input-style" formControlName="lastName" placeholder="Last Name"/>
+    <small *ngIf="(personalDetails.controls['lastName'].invalid && (personalDetails.controls['lastName'].touched ) && personalDetails.controls['lastName'].hasError('required') )" class="text-danger">
+      <label>*Last name required</label>
+    </small>
+    <small *ngIf="(personalDetails.controls['lastName'].invalid && (personalDetails.controls['lastName'].touched) && personalDetails.controls['lastName'].hasError('maxlength'))"
+    class="text-danger">
+    Last name must be less than 40 characters </small>
+  </div>
+  <br>
+  <div class="input-group">
+    <label style="font-size: 13px; font-weight: bold; color: grey;">City</label><br>
+    <input id="city" type="text" class="input-style" formControlName ="city" placeholder="City"/>
+    <small *ngIf="personalDetails.controls['city'].invalid && personalDetails.controls['city'].hasError('required') && (personalDetails.controls['city'].touched )" class="text-danger">
+    <label>*City name required</label>
+    </small>
+    <small *ngIf="(personalDetails.controls['city'].invalid && (personalDetails.controls['city'].touched) && personalDetails.controls['city'].hasError('maxlength'))"
+    class="text-danger">
+    City name must be less than 40 characters </small>
+  </div>
+  <br>
+  <div class="input-group">
+    <label style="font-size: 13px; font-weight: bold; color: grey;">Postal Code</label><br>
+    <input id="postalCode" type="text" class="input-style" formControlName="postalCode" placeholder="Postal Code"/>
+    <small *ngIf="personalDetails.controls['postalCode'].invalid && personalDetails.controls['postalCode'].hasError('required') && (personalDetails.controls['postalCode'].touched )" class="text-danger">
+      <label>*Postal Code required</label>
+      </small>
+      <small *ngIf="(personalDetails.controls['postalCode'].invalid && (personalDetails.controls['postalCode'].touched) && personalDetails.controls['postalCode'].hasError('maxlength'))"
+      class="text-danger">
+      Postal code must be less than 40 characters </small>
+  </div>
+  <br>
+  <div class="input-group">
+    <label style="font-size: 13px; font-weight: bold; color: grey;">State</label><br>
+    <input id="state" type="text" class="input-style" formControlName="state" placeholder="State"/>
+    <small *ngIf="personalDetails.controls['state'].invalid && personalDetails.controls['state'].hasError('required') && (personalDetails.controls['state'].touched )" class="text-danger">
+      <label>*State Name required</label>
+      </small>
+      <small *ngIf="(personalDetails.controls['state'].invalid && (personalDetails.controls['state'].touched) && personalDetails.controls['state'].hasError('maxlength'))"
+      class="text-danger">
+      State Name must be less than 40 characters </small>
+  </div>
+  <br>
+  <div class="input-group">
+    <label style="font-size: 13px; font-weight: bold; color: grey;">Country</label><br>
+    <input id="country" type="text" class="input-style" formControlName ="country" placeholder="Country"/>
+    <small *ngIf="personalDetails.controls['country'].invalid && personalDetails.controls['country'].hasError('required') && (personalDetails.controls['country'].touched )" class="text-danger">
+      <label>*Country Name required</label>
+      </small>
+      <small *ngIf="(personalDetails.controls['country'].invalid && (personalDetails.controls['country'].touched) && personalDetails.controls['country'].hasError('maxlength'))"
+      class="text-danger">
+      Country name must be less than 40 characters </small>
+  </div>
+  <br><br>
+  <p class="input-group" style="font-size: 20px; font-weight: bold; color: black; ">Select Your Gender</p>
+  <div class="input-group1">
+    <input type="radio" id="Male" value="Male" name="gender" checked/>
+
+    <label for="Male">Male</label>
+  </div>
+  <div class="input-group1">
+    <input type="radio" id="Female" name="gender" value="Female"/>
+    <label for="Female">Female</label>
+  </div>
+  <div class="input-group1">
+    <input type="radio" id="Other" name="gender" value="Other"/>
+    <label for="Other">Other</label>
+  </div>
+  <br><br>
+  <p class="input-group" style="font-size: 20px; font-weight: bold; color: black; ">Are You Happy To Start Your Journey with Us?</p>
+  <div class="input-group1">
+    <input type="radio" id="Yes" value="Yes" name="happyornot" checked/>
+    <label for="Yes">Yes</label>
+  </div>
+  <div class="input-group1">
+    <input type="radio" id="No" value="No" name="happyornot"/>
+    <label for="No">No</label>
+  </div>
+  <br><br>
+</form>
+<br><br>
+<button *ngIf="submitted" (click)="submitFun()" type="submit"   class="button">NEXT</button>
